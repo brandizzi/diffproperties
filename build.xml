@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="diffproperties" basedir=".">
+	<property file="build.properties" />
+	<target name="compile">
+		<javac srcdir="src" destdir="./classes" />
+	</target>
+	
+	<target name="jar" depends="compile">
+	     <manifest file="MANIFEST.MF">
+	        <attribute name="Built-By" value="${user.name}"/>
+	        <attribute name="Main-Class" value="br.com.seatecnologia.diffproperties.Main"/>
+	        <attribute name="Implementation-Version" 
+	                     value="${major.version}.${minor.version}"/> 
+	    </manifest>
+		<jar destfile="diffproperties-${major.version}.${minor.version}.jar" basedir="classes" manifest="src/META-INF/MANIFEST.MF" />
+	</target>
+	
+</project>
