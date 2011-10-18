@@ -15,15 +15,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		if (args.length < 2) {
-			File moduleFile;
-			try {
-				moduleFile = new File(Main.class.getProtectionDomain()
-						.getCodeSource().getLocation().toURI());
-				System.err.println("Usage:\n" +
-						"    java -jar " + moduleFile.getName() + " <properties-file-1> <properties-file-2>");
-			} catch (URISyntaxException e) {
-				System.err.println("Unexpected error while getting name of jar file: "+e.getLocalizedMessage());
-			}
+			showUsageError();
 			return;
 		}
 		String file1 = args[0];
@@ -60,6 +52,18 @@ public class Main {
 			if (p1value == null) {
 				System.out.println("+"+key+" = "+p2value+"\n");
 			}
+		}
+	}
+
+	private static void showUsageError() {
+		File moduleFile;
+		try {
+			moduleFile = new File(Main.class.getProtectionDomain()
+					.getCodeSource().getLocation().toURI());
+			System.err.println("Usage:\n" +
+					"    java -jar " + moduleFile.getName() + " <properties-file-1> <properties-file-2>");
+		} catch (URISyntaxException e) {
+			System.err.println("Unexpected error while getting name of jar file: "+e.getLocalizedMessage());
 		}
 	}
 
