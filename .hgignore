@@ -1,0 +1,6 @@
+.*\.properties\..*
+\.jar$
+\.classpath
+\.settings
+\.project
+classes
