@@ -6,7 +6,7 @@
 	</target>
 	
 	<target name="jar" depends="compile">
-	     <manifest file="MANIFEST.MF">
+	     <manifest file="src/META-INF/MANIFEST.MF">
 	        <attribute name="Built-By" value="${user.name}"/>
 	        <attribute name="Main-Class" value="br.com.seatecnologia.diffproperties.Main"/>
 	        <attribute name="Implementation-Version" 
