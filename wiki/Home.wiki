@@ -1,0 +1,6 @@
+**diffproperties** is a little (veeeery little) Java program for presenting the different properties set on two .properties files. It is written in Java for granting that the .properties files will consider the semantics of the {{{java.util.Properties}}} class. I created it because a mere {{{diff}}}  in two .properties files would present too much irrelevant difference between them. I //shared// it because it would be annoying to implement it all times... and also to provide YOU a little jar that [[https://bitbucket.org/brandizzi/diffproperties/downloads/diffproperties-0.2.jar|you can download here]] (or in the [[https://bitbucket.org/brandizzi/diffproperties/downloads|Downloads page]]) and use this way:
+
+{{{
+$ java -jar diffproperties-0.2.jar <One .properties file> <Another .properties file>
+}}}
+
